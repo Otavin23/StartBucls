@@ -4,18 +4,26 @@ import styled from "styled-components"
 export const BgHeader = styled.header`
     background: white;
     min-height: 4rem;
-    max-width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0px 4px 10px #F8F8FF;
+    box-shadow: 0px 4px 10px #f5f5f5;
+
+    @media (max-width: 768px){
+        justify-content: space-evenly;
+    }
+    @media (max-width: 425px){
+        max-height: 100%;
+        align-items: center;
+    }
 `
 export const Logo = styled.div`
     margin-left: 10%;
     img{
         max-width: 60px;
         max-height: 60px;
+        cursor: pointer;
     }
  `
 export const SearchMenu = styled.div`
@@ -24,7 +32,6 @@ export const SearchMenu = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-wrap: wrap;
     margin-right: 10%;
     .input-search{
         display: flex;
@@ -36,9 +43,9 @@ export const SearchMenu = styled.div`
             padding-left: 1rem;
             outline: none;
             border: none;
-    
-            &:focus{
-                border: 2px solid #A9A9A9;
+            font-weight: 400;
+            @media (max-width:425px){
+                min-width: 150px;
             }
         }
         img{
